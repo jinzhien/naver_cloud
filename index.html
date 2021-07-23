@@ -27,6 +27,7 @@
     <link rel="stylesheet" href="css/main.css?ver=<?php echo time(); ?>" />
     <!-- JS -->
     <script src="js/swiper-bundle.min.js"></script>
+    <script type="text/javascript" src="vendors/scrolloverflow.min.js"></script>
     <script src="js/fullpage.min.js"></script>
     <script src="js/jquery-2.2.4.js"></script>
     <script defer src="js/main.js?ver=<?php echo time(); ?>"></script>
@@ -59,12 +60,12 @@
                             <a href="#">네이버 클라우드 플랫폼<i>outlinkicon</i></a>
                         </li>
                     </ul>
-                    <div class="lang_menu">
+                    <div class="lang_menu active">
                         <div class="lang_btn"></div>
-                        <ul class="clearfix">
-                            <li><a class="active">한국어</a></li>
-                            <li><a class="en">English</a></li>
-                            <li><a class="jp">日本語</a></li>
+                        <ul class="lang_list clearfix">
+                            <li><a href="#" class="active">한국어</a></li>
+                            <li><a href="#" class="en">English</a></li>
+                            <li><a href="#" class="jp">日本語</a></li>
                         </ul>
                     </div>
                 </div>
@@ -79,7 +80,7 @@
             </div>
         </header>
         <section id="sec_wrap fullpage" class="fullpage">
-            <div class="main_section sec1">
+            <div class="section sec1">
                 <div class="swiper-container">
                     <div class="swiper-wrapper">
                         <div class="swiper-slide slide1">
@@ -119,12 +120,12 @@
                         <div class="swiper-pagination"></div>
                     </div>
                     <div class="bottom_btn">
-                        <button href="#" class="down_arrow">scroll down</button>
+                        <a href="#sec2" class="down_arrow page-scroll">scroll down</a>
                     </div>
                 </div>
 
             </div>
-            <div class="section sec2">
+            <div class="section sec2" id="sec2">
                 <div class="container">
                     <div class="sec_txt center">
                         <p>네이버클라우드는</p>
@@ -149,274 +150,276 @@
                         </div>
                     </div>
                     <div class="sec3_right">
-                        <ul class="active">
-                            <li>
-                                <img src="/naver_cloud/img/mo_loop_02.jpg" alt="">
-                                <span>AI</span>
-                            </li>
-                            <li>
-                                <img src="/naver_cloud/img/mo_loop_04.jpg" alt="">
-                                <span>Education</span>
-                            </li>
-                            <li>
-                                <img src="/naver_cloud/img/mo_loop_06.jpg" alt="">
-                                <span>Finance</span>
-                            </li>
-                            <li>
-                                <img src="/naver_cloud/img/mo_loop_08.jpg" alt="">
-                                <span>Media</span>
-                            </li>
-                            <li>
-                                <img src="/naver_cloud/img/mo_loop_10.jpg" alt="">
-                                <span>Work</span>
-                            </li>
-                            <li>
-                                <img src="/naver_cloud/img/mo_loop_12.jpg" alt="">
-                                <span>Hybrid Cloud</span>
-                            </li>
-                            <li>
-                                <img src="/naver_cloud/img/mo_loop_02.jpg" alt="">
-                                <span>AI</span>
-                            </li>
-                            <li>
-                                <img src="/naver_cloud/img/mo_loop_04.jpg" alt="">
-                                <span>Education</span>
-                            </li>
-                            <li>
-                                <img src="/naver_cloud/img/mo_loop_06.jpg" alt="">
-                                <span>Finance</span>
-                            </li>
-                            <li>
-                                <img src="/naver_cloud/img/mo_loop_08.jpg" alt="">
-                                <span>Media</span>
-                            </li>
-                            <li>
-                                <img src="/naver_cloud/img/mo_loop_10.jpg" alt="">
-                                <span>Work</span>
-                            </li>
-                            <li>
-                                <img src="/naver_cloud/img/mo_loop_12.jpg" alt="">
-                                <span>Hybrid Cloud</span>
-                            </li>
-                            <li>
-                                <img src="/naver_cloud/img/mo_loop_02.jpg" alt="">
-                                <span>AI</span>
-                            </li>
-                            <li>
-                                <img src="/naver_cloud/img/mo_loop_04.jpg" alt="">
-                                <span>Education</span>
-                            </li>
-                            <li>
-                                <img src="/naver_cloud/img/mo_loop_06.jpg" alt="">
-                                <span>Finance</span>
-                            </li>
-                            <li>
-                                <img src="/naver_cloud/img/mo_loop_08.jpg" alt="">
-                                <span>Media</span>
-                            </li>
-                            <li>
-                                <img src="/naver_cloud/img/mo_loop_10.jpg" alt="">
-                                <span>Work</span>
-                            </li>
-                            <li>
-                                <img src="/naver_cloud/img/mo_loop_12.jpg" alt="">
-                                <span>Hybrid Cloud</span>
-                            </li>
-                            <li>
-                                <img src="/naver_cloud/img/mo_loop_02.jpg" alt="">
-                                <span>AI</span>
-                            </li>
-                            <li>
-                                <img src="/naver_cloud/img/mo_loop_04.jpg" alt="">
-                                <span>Education</span>
-                            </li>
-                            <li>
-                                <img src="/naver_cloud/img/mo_loop_06.jpg" alt="">
-                                <span>Finance</span>
-                            </li>
-                            <li>
-                                <img src="/naver_cloud/img/mo_loop_08.jpg" alt="">
-                                <span>Media</span>
-                            </li>
-                            <li>
-                                <img src="/naver_cloud/img/mo_loop_10.jpg" alt="">
-                                <span>Work</span>
-                            </li>
-                            <li>
-                                <img src="/naver_cloud/img/mo_loop_12.jpg" alt="">
-                                <span>Hybrid Cloud</span>
-                            </li>
-                            <li>
-                                <img src="/naver_cloud/img/mo_loop_02.jpg" alt="">
-                                <span>AI</span>
-                            </li>
-                            <li>
-                                <img src="/naver_cloud/img/mo_loop_04.jpg" alt="">
-                                <span>Education</span>
-                            </li>
-                            <li>
-                                <img src="/naver_cloud/img/mo_loop_06.jpg" alt="">
-                                <span>Finance</span>
-                            </li>
-                            <li>
-                                <img src="/naver_cloud/img/mo_loop_08.jpg" alt="">
-                                <span>Media</span>
-                            </li>
-                            <li>
-                                <img src="/naver_cloud/img/mo_loop_10.jpg" alt="">
-                                <span>Work</span>
-                            </li>
-                            <li>
-                                <img src="/naver_cloud/img/mo_loop_12.jpg" alt="">
-                                <span>Hybrid Cloud</span>
-                            </li>
-                            <li>
-                                <img src="/naver_cloud/img/mo_loop_02.jpg" alt="">
-                                <span>AI</span>
-                            </li>
-                            <li>
-                                <img src="/naver_cloud/img/mo_loop_04.jpg" alt="">
-                                <span>Education</span>
-                            </li>
-                            <li>
-                                <img src="/naver_cloud/img/mo_loop_06.jpg" alt="">
-                                <span>Finance</span>
-                            </li>
-                            <li>
-                                <img src="/naver_cloud/img/mo_loop_08.jpg" alt="">
-                                <span>Media</span>
-                            </li>
-                            <li>
-                                <img src="/naver_cloud/img/mo_loop_10.jpg" alt="">
-                                <span>Work</span>
-                            </li>
-                            <li>
-                                <img src="/naver_cloud/img/mo_loop_12.jpg" alt="">
-                                <span>Hybrid Cloud</span>
-                            </li>
-                        </ul>
-                        <ul class="active">
-                            <li>
-                                <img src="/naver_cloud/img/mo_loop_01.jpg" alt="">
-                                <span>E-Commerce</span>
-                            </li>
-                            <li>
-                                <img src="/naver_cloud/img/mo_loop_03.jpg" alt="">
-                                <span>HealthCare</span>
-                            </li>
-                            <li>
-                                <img src="/naver_cloud/img/mo_loop_05.jpg" alt="">
-                                <span>Public Sector</span>
-                            </li>
-                            <li>
-                                <img src="/naver_cloud/img/mo_loop_07.jpg" alt="">
-                                <span>Game</span>
-                            </li>
-                            <li>
-                                <img src="/naver_cloud/img/mo_loop_09.jpg" alt="">
-                                <span>Manufacturing</span>
-                            </li>
-                            <li>
-                                <img src="/naver_cloud/img/mo_loop_11.jpg" alt="">
-                                <span>Big Data</span>
-                            </li>
-                            <li>
-                                <img src="/naver_cloud/img/mo_loop_01.jpg" alt="">
-                                <span>E-Commerce</span>
-                            </li>
-                            <li>
-                                <img src="/naver_cloud/img/mo_loop_03.jpg" alt="">
-                                <span>HealthCare</span>
-                            </li>
-                            <li>
-                                <img src="/naver_cloud/img/mo_loop_05.jpg" alt="">
-                                <span>Public Sector</span>
-                            </li>
-                            <li>
-                                <img src="/naver_cloud/img/mo_loop_07.jpg" alt="">
-                                <span>Game</span>
-                            </li>
-                            <li>
-                                <img src="/naver_cloud/img/mo_loop_09.jpg" alt="">
-                                <span>Manufacturing</span>
-                            </li>
-                            <li>
-                                <img src="/naver_cloud/img/mo_loop_11.jpg" alt="">
-                                <span>Big Data</span>
-                            </li>
-                            <li>
-                                <img src="/naver_cloud/img/mo_loop_01.jpg" alt="">
-                                <span>E-Commerce</span>
-                            </li>
-                            <li>
-                                <img src="/naver_cloud/img/mo_loop_03.jpg" alt="">
-                                <span>HealthCare</span>
-                            </li>
-                            <li>
-                                <img src="/naver_cloud/img/mo_loop_05.jpg" alt="">
-                                <span>Public Sector</span>
-                            </li>
-                            <li>
-                                <img src="/naver_cloud/img/mo_loop_07.jpg" alt="">
-                                <span>Game</span>
-                            </li>
-                            <li>
-                                <img src="/naver_cloud/img/mo_loop_09.jpg" alt="">
-                                <span>Manufacturing</span>
-                            </li>
-                            <li>
-                                <img src="/naver_cloud/img/mo_loop_11.jpg" alt="">
-                                <span>Big Data</span>
-                            </li>
-                            <li>
-                                <img src="/naver_cloud/img/mo_loop_01.jpg" alt="">
-                                <span>E-Commerce</span>
-                            </li>
-                            <li>
-                                <img src="/naver_cloud/img/mo_loop_03.jpg" alt="">
-                                <span>HealthCare</span>
-                            </li>
-                            <li>
-                                <img src="/naver_cloud/img/mo_loop_05.jpg" alt="">
-                                <span>Public Sector</span>
-                            </li>
-                            <li>
-                                <img src="/naver_cloud/img/mo_loop_07.jpg" alt="">
-                                <span>Game</span>
-                            </li>
-                            <li>
-                                <img src="/naver_cloud/img/mo_loop_09.jpg" alt="">
-                                <span>Manufacturing</span>
-                            </li>
-                            <li>
-                                <img src="/naver_cloud/img/mo_loop_11.jpg" alt="">
-                                <span>Big Data</span>
-                            </li>
-                            <li>
-                                <img src="/naver_cloud/img/mo_loop_01.jpg" alt="">
-                                <span>E-Commerce</span>
-                            </li>
-                            <li>
-                                <img src="/naver_cloud/img/mo_loop_03.jpg" alt="">
-                                <span>HealthCare</span>
-                            </li>
-                            <li>
-                                <img src="/naver_cloud/img/mo_loop_05.jpg" alt="">
-                                <span>Public Sector</span>
-                            </li>
-                            <li>
-                                <img src="/naver_cloud/img/mo_loop_07.jpg" alt="">
-                                <span>Game</span>
-                            </li>
-                            <li>
-                                <img src="/naver_cloud/img/mo_loop_09.jpg" alt="">
-                                <span>Manufacturing</span>
-                            </li>
-                            <li>
-                                <img src="/naver_cloud/img/mo_loop_11.jpg" alt="">
-                                <span>Big Data</span>
-                            </li>
-                        </ul>              
+                        <div class="scroll_img_wrap">
+                            <ul class="scroll_img scroll_img_left">
+                                <li>
+                                    <img src="/naver_cloud/img/mo_loop_02.jpg" alt="">
+                                    <span>AI</span>
+                                </li>
+                                <li>
+                                    <img src="/naver_cloud/img/mo_loop_04.jpg" alt="">
+                                    <span>Education</span>
+                                </li>
+                                <li>
+                                    <img src="/naver_cloud/img/mo_loop_06.jpg" alt="">
+                                    <span>Finance</span>
+                                </li>
+                                <li>
+                                    <img src="/naver_cloud/img/mo_loop_08.jpg" alt="">
+                                    <span>Media</span>
+                                </li>
+                                <li>
+                                    <img src="/naver_cloud/img/mo_loop_10.jpg" alt="">
+                                    <span>Work</span>
+                                </li>
+                                <li>
+                                    <img src="/naver_cloud/img/mo_loop_12.jpg" alt="">
+                                    <span>Hybrid Cloud</span>
+                                </li>
+                                <li>
+                                    <img src="/naver_cloud/img/mo_loop_02.jpg" alt="">
+                                    <span>AI</span>
+                                </li>
+                                <li>
+                                    <img src="/naver_cloud/img/mo_loop_04.jpg" alt="">
+                                    <span>Education</span>
+                                </li>
+                                <li>
+                                    <img src="/naver_cloud/img/mo_loop_06.jpg" alt="">
+                                    <span>Finance</span>
+                                </li>
+                                <li>
+                                    <img src="/naver_cloud/img/mo_loop_08.jpg" alt="">
+                                    <span>Media</span>
+                                </li>
+                                <li>
+                                    <img src="/naver_cloud/img/mo_loop_10.jpg" alt="">
+                                    <span>Work</span>
+                                </li>
+                                <li>
+                                    <img src="/naver_cloud/img/mo_loop_12.jpg" alt="">
+                                    <span>Hybrid Cloud</span>
+                                </li>
+                                <li>
+                                    <img src="/naver_cloud/img/mo_loop_02.jpg" alt="">
+                                    <span>AI</span>
+                                </li>
+                                <li>
+                                    <img src="/naver_cloud/img/mo_loop_04.jpg" alt="">
+                                    <span>Education</span>
+                                </li>
+                                <li>
+                                    <img src="/naver_cloud/img/mo_loop_06.jpg" alt="">
+                                    <span>Finance</span>
+                                </li>
+                                <li>
+                                    <img src="/naver_cloud/img/mo_loop_08.jpg" alt="">
+                                    <span>Media</span>
+                                </li>
+                                <li>
+                                    <img src="/naver_cloud/img/mo_loop_10.jpg" alt="">
+                                    <span>Work</span>
+                                </li>
+                                <li>
+                                    <img src="/naver_cloud/img/mo_loop_12.jpg" alt="">
+                                    <span>Hybrid Cloud</span>
+                                </li>
+                                <li>
+                                    <img src="/naver_cloud/img/mo_loop_02.jpg" alt="">
+                                    <span>AI</span>
+                                </li>
+                                <li>
+                                    <img src="/naver_cloud/img/mo_loop_04.jpg" alt="">
+                                    <span>Education</span>
+                                </li>
+                                <li>
+                                    <img src="/naver_cloud/img/mo_loop_06.jpg" alt="">
+                                    <span>Finance</span>
+                                </li>
+                                <li>
+                                    <img src="/naver_cloud/img/mo_loop_08.jpg" alt="">
+                                    <span>Media</span>
+                                </li>
+                                <li>
+                                    <img src="/naver_cloud/img/mo_loop_10.jpg" alt="">
+                                    <span>Work</span>
+                                </li>
+                                <li>
+                                    <img src="/naver_cloud/img/mo_loop_12.jpg" alt="">
+                                    <span>Hybrid Cloud</span>
+                                </li>
+                                <li>
+                                    <img src="/naver_cloud/img/mo_loop_02.jpg" alt="">
+                                    <span>AI</span>
+                                </li>
+                                <li>
+                                    <img src="/naver_cloud/img/mo_loop_04.jpg" alt="">
+                                    <span>Education</span>
+                                </li>
+                                <li>
+                                    <img src="/naver_cloud/img/mo_loop_06.jpg" alt="">
+                                    <span>Finance</span>
+                                </li>
+                                <li>
+                                    <img src="/naver_cloud/img/mo_loop_08.jpg" alt="">
+                                    <span>Media</span>
+                                </li>
+                                <li>
+                                    <img src="/naver_cloud/img/mo_loop_10.jpg" alt="">
+                                    <span>Work</span>
+                                </li>
+                                <li>
+                                    <img src="/naver_cloud/img/mo_loop_12.jpg" alt="">
+                                    <span>Hybrid Cloud</span>
+                                </li>
+                                <li>
+                                    <img src="/naver_cloud/img/mo_loop_02.jpg" alt="">
+                                    <span>AI</span>
+                                </li>
+                                <li>
+                                    <img src="/naver_cloud/img/mo_loop_04.jpg" alt="">
+                                    <span>Education</span>
+                                </li>
+                                <li>
+                                    <img src="/naver_cloud/img/mo_loop_06.jpg" alt="">
+                                    <span>Finance</span>
+                                </li>
+                                <li>
+                                    <img src="/naver_cloud/img/mo_loop_08.jpg" alt="">
+                                    <span>Media</span>
+                                </li>
+                                <li>
+                                    <img src="/naver_cloud/img/mo_loop_10.jpg" alt="">
+                                    <span>Work</span>
+                                </li>
+                                <li>
+                                    <img src="/naver_cloud/img/mo_loop_12.jpg" alt="">
+                                    <span>Hybrid Cloud</span>
+                                </li>
+                            </ul>
+                            <ul class="scroll_img scroll_img_right">
+                                <li>
+                                    <img src="/naver_cloud/img/mo_loop_01.jpg" alt="">
+                                    <span>E-Commerce</span>
+                                </li>
+                                <li>
+                                    <img src="/naver_cloud/img/mo_loop_03.jpg" alt="">
+                                    <span>HealthCare</span>
+                                </li>
+                                <li>
+                                    <img src="/naver_cloud/img/mo_loop_05.jpg" alt="">
+                                    <span>Public Sector</span>
+                                </li>
+                                <li>
+                                    <img src="/naver_cloud/img/mo_loop_07.jpg" alt="">
+                                    <span>Game</span>
+                                </li>
+                                <li>
+                                    <img src="/naver_cloud/img/mo_loop_09.jpg" alt="">
+                                    <span>Manufacturing</span>
+                                </li>
+                                <li>
+                                    <img src="/naver_cloud/img/mo_loop_11.jpg" alt="">
+                                    <span>Big Data</span>
+                                </li>
+                                <li>
+                                    <img src="/naver_cloud/img/mo_loop_01.jpg" alt="">
+                                    <span>E-Commerce</span>
+                                </li>
+                                <li>
+                                    <img src="/naver_cloud/img/mo_loop_03.jpg" alt="">
+                                    <span>HealthCare</span>
+                                </li>
+                                <li>
+                                    <img src="/naver_cloud/img/mo_loop_05.jpg" alt="">
+                                    <span>Public Sector</span>
+                                </li>
+                                <li>
+                                    <img src="/naver_cloud/img/mo_loop_07.jpg" alt="">
+                                    <span>Game</span>
+                                </li>
+                                <li>
+                                    <img src="/naver_cloud/img/mo_loop_09.jpg" alt="">
+                                    <span>Manufacturing</span>
+                                </li>
+                                <li>
+                                    <img src="/naver_cloud/img/mo_loop_11.jpg" alt="">
+                                    <span>Big Data</span>
+                                </li>
+                                <li>
+                                    <img src="/naver_cloud/img/mo_loop_01.jpg" alt="">
+                                    <span>E-Commerce</span>
+                                </li>
+                                <li>
+                                    <img src="/naver_cloud/img/mo_loop_03.jpg" alt="">
+                                    <span>HealthCare</span>
+                                </li>
+                                <li>
+                                    <img src="/naver_cloud/img/mo_loop_05.jpg" alt="">
+                                    <span>Public Sector</span>
+                                </li>
+                                <li>
+                                    <img src="/naver_cloud/img/mo_loop_07.jpg" alt="">
+                                    <span>Game</span>
+                                </li>
+                                <li>
+                                    <img src="/naver_cloud/img/mo_loop_09.jpg" alt="">
+                                    <span>Manufacturing</span>
+                                </li>
+                                <li>
+                                    <img src="/naver_cloud/img/mo_loop_11.jpg" alt="">
+                                    <span>Big Data</span>
+                                </li>
+                                <li>
+                                    <img src="/naver_cloud/img/mo_loop_01.jpg" alt="">
+                                    <span>E-Commerce</span>
+                                </li>
+                                <li>
+                                    <img src="/naver_cloud/img/mo_loop_03.jpg" alt="">
+                                    <span>HealthCare</span>
+                                </li>
+                                <li>
+                                    <img src="/naver_cloud/img/mo_loop_05.jpg" alt="">
+                                    <span>Public Sector</span>
+                                </li>
+                                <li>
+                                    <img src="/naver_cloud/img/mo_loop_07.jpg" alt="">
+                                    <span>Game</span>
+                                </li>
+                                <li>
+                                    <img src="/naver_cloud/img/mo_loop_09.jpg" alt="">
+                                    <span>Manufacturing</span>
+                                </li>
+                                <li>
+                                    <img src="/naver_cloud/img/mo_loop_11.jpg" alt="">
+                                    <span>Big Data</span>
+                                </li>
+                                <li>
+                                    <img src="/naver_cloud/img/mo_loop_01.jpg" alt="">
+                                    <span>E-Commerce</span>
+                                </li>
+                                <li>
+                                    <img src="/naver_cloud/img/mo_loop_03.jpg" alt="">
+                                    <span>HealthCare</span>
+                                </li>
+                                <li>
+                                    <img src="/naver_cloud/img/mo_loop_05.jpg" alt="">
+                                    <span>Public Sector</span>
+                                </li>
+                                <li>
+                                    <img src="/naver_cloud/img/mo_loop_07.jpg" alt="">
+                                    <span>Game</span>
+                                </li>
+                                <li>
+                                    <img src="/naver_cloud/img/mo_loop_09.jpg" alt="">
+                                    <span>Manufacturing</span>
+                                </li>
+                                <li>
+                                    <img src="/naver_cloud/img/mo_loop_11.jpg" alt="">
+                                    <span>Big Data</span>
+                                </li>
+                            </ul>   
+                        </div>           
                     </div>
                 </div>
             </div>
@@ -441,11 +444,11 @@
                         <img src="/naver_cloud/img/main_tree_icon.png" alt="나무아이콘">
                     </div>
                     <div class="bottom_btn">
-                        <button href="#" class="down_arrow">scroll down</button>
+                        <a href="#sec5" class="down_arrow page-scroll">scroll down</a>
                     </div>
                 </div>
             </div>
-            <div class="section sec5">
+            <div class="section sec5" id="sec5">
                 <div class="container">
                     <div class="sec_txt">
                         <h2>
@@ -506,7 +509,7 @@
                                 </a>
                             </li>
                         </ul>
-                        <a href="#" class="btn3">새로운 소식 더보기</a>
+                        <a href="#" class="btn_bk">새로운 소식 더보기</a>
                     </div>
                     <div class="notice">
                         <div class="notice_box">
@@ -548,8 +551,8 @@
                     </div>
                 </div>
                 <div class="ft_right">
-                    <div class="fam_site on">
-                        <a href="#">관계사 바로가기<i></i></a>
+                    <div class="fam_site">
+                        <a href="#none">관계사 바로가기<i></i></a>
                         <ul>
                             <li><a href="#">네이버</a></li>
                             <li><a href="#">네이버랩스</a></li>         
@@ -588,6 +591,16 @@
         el: '.swiper-scrollbar',
         },
     });
+
+
+    new fullpage('#fullpage', {
+	//options here
+	autoScrolling:true,
+	scrollHorizontally: true
+    });
+
+    //methods
+    fullpage_api.setAllowScrolling(false);
     </script>
 </body>
 </html>

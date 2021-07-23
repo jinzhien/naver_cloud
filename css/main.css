@@ -12,6 +12,8 @@
     position: relative;
     padding: 29px 150px; 
     transition: .3s;
+    display: flex;
+    justify-content: space-between;
 }
 #hd .logo{
     float: left;
@@ -90,14 +92,14 @@
     background: url(/naver_cloud/img/global_icon_w.png) no-repeat; 
     background-size: cover; 
 }
-.lang_menu:hover .lang_btn{
+.lang_menu .lang_btn:hover{
     width:24px; 
     height:24px; 
     background: url(/naver_cloud/img/global_icon_g.png) no-repeat;
     background-size: cover; 
 }
 .lang_menu ul{
-/*     display: none; */
+    display: none;
     padding: 12px;
     width: 85px;
     position: absolute;
@@ -296,12 +298,15 @@
     display: block;
     width: 299px;
     height: 46px;
-    padding-left: 150px;
     background: url(/naver_cloud/img/main_slide_btn.png) no-repeat;
     background-size: contain;
     margin-top: 30px;
     text-indent: -100000px;
-    border: none;
+    border: 1px solid transparent;
+}
+.slide1 .slide_txt .img_btn:hover{
+    border: 1px solid #fff;
+    border-radius: 30px;
 }
 .slide_txt a:hover{
     border: 1px solid #fff;
@@ -348,7 +353,7 @@
     transform: translateX(-50%);
     z-index: 20;
 }
-.bottom_btn button{
+.bottom_btn a{
     display: block;
     width: 64px;
     height: 62px;
@@ -366,7 +371,7 @@
     0%, 100% {-moz-transform: translateY(0);-ms-transform: translateY(0);-webkit-transform: translateY(0);transform: translateY(0);}
     50% {-moz-transform: translateY(8px);-ms-transform: translateY(8px);-webkit-transform: translateY(8px);transform: translateY(8px);}
   }
-.bottom_btn:hover button{
+.bottom_btn:hover a{
     display: block;
     width: 64px;
     height: 62px;
@@ -427,13 +432,11 @@
 /* 섹션3 - 서비스 바로가기*/
 .sec3{
     width: 100%;
-    height: 1000px;
     background-color: #f9f9f9;
 }
 .sec3 .container{
     max-width: 1476px;
     margin: 0 auto;
-    height: 860px;
     overflow: hidden;
     padding: 0 90px;
 }
@@ -445,26 +448,25 @@
 .sec3_right{
     width: 50%;
     float: right;
-    text-align: right;
-    overflow: hidden;
+    position: relative;
+}
+.sec3_right .scroll_img_wrap{
+    width: 100%;
     position: relative;
 }
 .sec3_right ul{
     display: inline-block;
-    margin-right: 6%;
-    width: 43%;
+    width: 47%;
     height: calc(352px * 36);
 }
-.sec3_right ul.active{
-    animation: verticalscroll 180s linear infinite;
-}
-@keyframes verticalscroll {
-	0% {-moz-transform: translateY(0);-ms-transform: translateY(0);-webkit-transform: translateY(0);transform: translateY(0);}
-	100% {-moz-transform: translateY(-8448px);-ms-transform: translateY(-8448px);-webkit-transform: translateY(-8448px);transform: translateY(-8448px)}
-}
-.sec3_right ul:nth-child(2){
-    margin:  0;
+.scroll_img_left{
     position: absolute;
+    left: 0;
+    margin-right: 6%;
+}
+.scroll_img_right{
+    position: absolute;
+    right: 0;
     top: -100px;
 }
 .sec3_right ul li{
@@ -490,16 +492,34 @@
     font-weight: 600;
     letter-spacing: 0;
 }
+.sec3_right .scroll_img{
+    animation: verticalscroll 180s linear infinite;
+}
+@keyframes verticalscroll {
+	0% {
+        -moz-transform: translateY(0);
+        -ms-transform: translateY(0);
+        -webkit-transform: translateY(0);
+        transform: translateY(0);
+    }
+	100% {
+        -moz-transform: translateY(-8448px);
+        -ms-transform: translateY(-8448px);
+        -webkit-transform: translateY(-8448px);
+        transform: translateY(-8448px)
+    }
+}
 
 /* 섹션4 - IT 생태계 바로가기*/
 .sec4{
     width: 100%;
     height: 100vh;
     position: relative;
+    overflow: hidden;
 }
 .sec4 .container{
     max-width: 1476px;
-    height: 860px;
+    padding: 0 90px;
     margin: 0 auto;
     box-sizing: border-box;
     overflow: hidden;
@@ -507,7 +527,6 @@
 .sec4_left{
     position: absolute;
     top: 50%;
-    left: 250px;/* 위치조정 필요함 */
     transform: translateY(-50%);
     width: 40%;
     margin-right: 50%;
@@ -528,7 +547,7 @@
 }
 .sec_txt .btn_tp:hover{
     background: #03c75a;
-    border: none;
+    border: 1px solid transparent;
 }
 .sec4_right{
     position: absolute;
@@ -540,7 +559,6 @@
     opacity: 1;
     transition: all 1.5s ease;
 }
-
 .sec4_right img{
     position: absolute;
     top: 0;
@@ -575,7 +593,13 @@
 .sec5{
     width: 100%;
     position: relative;
-    margin-top: 100px;
+}
+.sec5 .container{
+    max-width: 1476px;
+    height: 100%;
+    padding: 202px 90px 120px;
+    margin: 0 auto;
+    box-sizing: border-box;
 }
 .news{
     text-align: center;
@@ -625,6 +649,7 @@
     font-family: 'Calibre-webfont', sans-serif;
     letter-spacing: 0;
     text-align: left;
+    font-weight: 500;
 }
 
 .news .btn_bk{
@@ -643,7 +668,7 @@
 }
 .news .btn_bk:hover{
     background: #03c75a;
-    border: none;
+    border: 1px solid transparent;
     color: #Fff;
 }
 
@@ -768,6 +793,9 @@
     font-weight: bold;
     transition: .3s;
 }
+.ft_link a:hover{
+    color: #03c75a;
+}
 .ft_sns ul li a:hover{
     color: #03c75a;
 }
@@ -801,13 +829,15 @@
     background-size: cover;
     transition: .3s;
 }
-.fam_site.on>a>i{
-    transform: rotateX(45);
+.fam_site>a>i.on{
+    transform: rotate(45deg);
+}
+.fam_site>a.on{
+    background: #1e1e1e;
 }
 .fam_site>a:hover{
-    background: #000;
+    background: #1e1e1e;
 }
-
 .fam_site{
     position: relative;
 }
@@ -822,7 +852,7 @@
     background-color: #fff;
     text-align: left;
 }
-.fam_site.on ul{
+.fam_site ul.on{
     display: block;
 }
 .fam_site ul li{
@@ -946,7 +976,7 @@
         height: 80vh;
     }
     .swiper-slide video{
-        display: none;
+/*         display: none; */
     }
     .swiper-slide .slide_txt{
         padding: 0 24px;
