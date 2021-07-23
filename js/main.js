@@ -1,8 +1,8 @@
-// fullpage
-
-
 // 헤더고정 & 탑버튼
-$('button.page-scroll').bind('click', function(event) {
+$('a.page-scroll').bind('click', function(event) {
+    var $anchor = $(this);
+    $anchor.parent().addClass('on').siblings().removeClass('on'); 
+
     $('html, body').stop().animate({
         scrollTop: ($($anchor.attr('href')).offset().top - 50)
     }, 1250, 'easeInOutExpo');
@@ -19,6 +19,7 @@ $(window).scroll(function(){
     }
 });
 
+
 //  gnb 클릭 시 밑줄 효과
 $(document).ready(function(){
     $('#gnb>ul>li').on('click', function(){
@@ -33,7 +34,7 @@ $(document).ready(function(){
 $(document).ready(function(){
     $('.lang_btn').on('click', function(){
         $('.lang_list').slideToggle('slow')
-    });000000
+    });
 }) 
  
 // lang_list 클릭 시 언어 변경되게
@@ -48,8 +49,9 @@ $(document).ready(function(){
 // 패밀리사이트
 $(document).ready(function(){
     $('.fam_site>a').on('click', function(){
-        $('.fam_site>ul').toggleClass('on');
-        $('.fam_site>a').toggleClass('on');
-        $('.fam_site>a>i').toggleClass('on');
+        $('.fam_site>ul').toggleClass('active');
+        $('.fam_site>a').toggleClass('active');
+        $('.fam_site>a>i').toggleClass('active');
     });
 })
+

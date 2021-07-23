@@ -2,25 +2,25 @@
 #hd{
     position: fixed; 
     top: 0; left: 0; 
-    z-index: 10; 
     width: 100%;
     height: auto;
     background: transparent;
     transition: .3s;
+    z-index: 10; 
 }
-#hd .hd_wrap{
+.hd_wrap{
+    display: flex;
+    justify-content: space-between;
     position: relative;
     padding: 29px 150px; 
     transition: .3s;
-    display: flex;
-    justify-content: space-between;
 }
-#hd .logo{
+.hd_logo{
     float: left;
     width: 182px; 
     height: 20px;
 }
-#hd .logo a{
+.hd_logo a{
     display:block; 
     width: 100%; 
     height: 100%; 
@@ -31,18 +31,18 @@
 #gnb{
     position: relative;
     float: right;
-    text-align: right;
 }
 #gnb>ul{
     display: inline-block;
+    vertical-align: middle;
 }
 #gnb>ul>li{
     float: left;
     padding: 0 24px;
 }
 #gnb>ul>li>a{
-    position: relative;
     display: block;
+    position: relative;
     color: #fff;
     font-size: 16px;
     font-weight: 700;
@@ -59,10 +59,11 @@
     background: url(/naver_cloud/img/outlink_icon.png) no-repeat center center;
     background-size: contain;
     opacity: 0;
-    vertical-align: middle;
     color: transparent;
-    overflow: hidden;
     text-indent: -9999px;
+}
+#gnb ul li.outlink a:hover i{
+    opacity: 1;
 }
 #gnb>ul>li:hover a{
     color: #03c75a;
@@ -76,10 +77,7 @@
     margin-top: 10px; 
     border-bottom: 2px solid #03c75a;
 }
-#gnb ul li.outlink a:hover i{
-    opacity: 1;
-}
-#gnb .lang_menu{
+.lang_menu{
     display: inline-block;
     position: relative;
     padding-left: 60px;
@@ -91,6 +89,8 @@
     height:24px; 
     background: url(/naver_cloud/img/global_icon_w.png) no-repeat; 
     background-size: cover; 
+    color: transparent;
+    text-indent: 9999px;
 }
 .lang_menu .lang_btn:hover{
     width:24px; 
@@ -98,66 +98,62 @@
     background: url(/naver_cloud/img/global_icon_g.png) no-repeat;
     background-size: cover; 
 }
-.lang_menu ul{
+.lang_list{
     display: none;
-    padding: 12px;
-    width: 85px;
     position: absolute;
-    top: 40px;
-    right: 0;
+    top: 40px; right: 0;
+    width: 85px;
+    padding: 12px;
     background-color: #fff;
     border: 1px solid #eee;
     border-radius: 8px;
 }
-.lang_menu ul.active{
+.lang_list.active{
     display: block;
 }
-.lang_menu ul li{
-    display: block;
+.lang_list li{
     margin-bottom: 4px;
-    float: none;
     text-align: center;
 }
-.lang_menu ul li a{
+.lang_list li a{
     display: block;
     padding: 8px 16px;
-    float: none;
-    text-align: center;
-    font-size: 14px;
-    font-weight: 700;
-    color: #1e1e1e;
     background-color: #fff;
     border-radius: 4px;
+    font-size: 14px;
+    color: #1e1e1e;
+    text-align: center;
 }
-.lang_menu ul li a:hover{
+.lang_list li a:hover{
     background-color: #f3f3f3;
 }
-.lang_menu ul li a.en{
+.lang_list li a.active{
+    color: #fff !important;
+    background-color: #03c75a;
+}
+.lang_list li a.en{
     font-size: 16px;
     font-weight: 600;
     letter-spacing: 0;
 }
-.lang_menu ul li a.active{
-    color: #fff !important;
-    background-color: #03c75a;
+.lang_list li a.jp{
+    font-weight: 600;
 }
 .toggle_menu{
     display: none;
+    position: absolute;
+    right: 0; top: 0;
     width: 32px;
     height: 32px;
-    position: absolute;
-    right: 0;
-    top: -8px;
-    z-index: 10;
+    z-index: 15;
 }
 .toggle_menu span{
+    display: block;
+    position: absolute;
+    top: 8px; left: 6px;
     width: 20px;
     height: 2px;
-    display: block;
     background: #fff;
-    position: absolute;
-    top: 8px;
-    left: 6px;
 }
 .toggle_menu span:nth-child(2){
     top: 15px;
@@ -165,12 +161,30 @@
 .toggle_menu span:nth-child(3){
     top: 22px;
 }
-
-/* 헤더고정시 변화*/
+.top_btn a{
+    display: none;
+    position: fixed;
+    right: 50px; bottom: 50px;
+    width: 60px;
+    height: 60px;
+    margin: 0;
+    background: url(/naver_cloud/img/top_btn.png) no-repeat center;
+    background-size: cover;
+    color: transparent;
+    text-indent: -9999px;
+    z-index: 20;
+    transition: .3s;
+}
+.top_btn:hover a{
+    background: url(/naver_cloud/img/top_btn_hover.png) no-repeat center;
+    background-size: cover;
+}
+/* 스크롤 시 변화 */
 .scroll .hd_wrap{
     background-color: #fff;
+    z-index: 30;
 }
-.scroll #hd .logo a{
+.scroll .hd_logo a{
     background: url(/naver_cloud/img/main_logo.svg) no-repeat;
     background-size: contain; 
 }
@@ -183,38 +197,16 @@
 .scroll #gnb ul li.active a{
     color: #03c75a;
 }
-.scroll #gnb .lang_menu .lang_btn{
+.scroll .lang_menu .lang_btn{
     background: url(/naver_cloud/img/global_icon_b.png) no-repeat;
     background-size: contain; 
 }
-.scroll #gnb .lang_menu .lang_btn:hover{
+.scroll .lang_menu .lang_btn:hover{
     background: url(/naver_cloud/img/global_icon_g.png) no-repeat;
     background-size: contain;
 }
 .scroll .toggle_menu span{
-    background: #000;
-}
-
-/* 탑버튼 */
-.top_btn a{
-    display: none;
-    margin: 0;
-    width: 60px;
-    height: 60px;
-    position: fixed;
-    right: 50px;
-    bottom: 50px;
-    color: transparent;
-    text-indent: -9999px;
-    overflow: hidden;
-    background: url(/naver_cloud/img/top_btn.png) no-repeat center;
-    background-size: cover;
-    z-index: 20;
-    transition: .3s;
-}
-.top_btn:hover a{
-    background: url(/naver_cloud/img/top_btn_hover.png) no-repeat center;
-    background-size: cover;
+    background: #1e1e1e;
 }
 .scroll .top_btn a{
     display: block;
@@ -225,6 +217,7 @@
 /* 섹션1 - 메인배너 */
 .sec1{
     width: 100%; 
+    height: 100%;
 }
 .swiper-container{
     width: 100%; 
@@ -246,67 +239,65 @@
     height: 100%;
     background: rgba(0, 0, 0, .2);
     z-index: 15;
+    color: transparent;
+    text-indent: -9999px;
 }
 .swiper-slide .slide_txt{
     position: absolute;
     top: 50%;
     left: 50%;
+    transform: translate(-50%, -50%);
     width: 100%;
     padding: 0 150px;
-    transform: translate(-50%, -50%);
     z-index: 20;
     transition: .3s;
     box-sizing: border-box;
 }
 .slide_txt h2{
+    color: #fff;
     font-size: 48px;
     line-height: 68px;
-    color: #fff;
     letter-spacing: -1px;
 }
 .slide_txt .txt_btn{
-    position: relative;
     display: inline-block;
-    height: 54px;
+    position: relative;
     width: auto;
-    background: none;
-    background-color: transparent;
+    height: 54px;
+    padding: 0 55px 0 36px;
+    margin-top: 30px;
     border: 1px solid rgba(255,255,255,0.2);
     border-radius: 100px;
     box-sizing: border-box;
-    padding: 0 55px 0 36px;
-    margin-top: 30px;
     color: #fff;
-    text-align: center;
     font-size: 15px;
-    font-weight: 700;
     line-height: 54px;
+    text-align: center;
     transition: .3s;
 }
 .slide_txt .txt_btn::after{
     content: '';
+    position: absolute;
+    top: 14px; right: 26px;
     width: 24px;
     height: 24px;
     background: url(/naver_cloud/img/outlink_icon.png)no-repeat;
     background-size: cover;
-    position: absolute;
-    top: 14px;
-    right: 26px;
     transition: .3s;
 }
 .slide1 .slide_txt .img_btn{
     display: block;
     width: 299px;
     height: 46px;
+    margin-top: 30px;
     background: url(/naver_cloud/img/main_slide_btn.png) no-repeat;
     background-size: contain;
-    margin-top: 30px;
-    text-indent: -100000px;
     border: 1px solid transparent;
+    text-indent: -100000px;
 }
 .slide1 .slide_txt .img_btn:hover{
-    border: 1px solid #fff;
-    border-radius: 30px;
+    background: url(/naver_cloud/img/main_slide_btn_on.png) no-repeat;
+    background-size: contain;
 }
 .slide_txt a:hover{
     border: 1px solid #fff;
@@ -315,36 +306,77 @@
     position: absolute;
     bottom: 80px;
     left: 50%;
+    transform: translateX(-50%);
     width: 100%;
     height: 48px;
-    transform: translateX(-50%);
-    z-index: 20;
     padding: 0 150px;
     box-sizing: border-box;
+    z-index: 30;
 }
 .slide_btn .swiper-button-prev{
+    display: inline-block;
+    position: relative;
     top: auto;
+    left: auto;
     width: 48px;
     height: 48px;
     margin-top: 0;
+    background-image: url(/naver_cloud/img/main_prev_btn_w.png);
     background-size: cover;
-    position: relative;
-    display: inline-block;
-    background-image: url(/lang/images/main_prev_btn_w.png);
-    left: auto;
+    cursor: pointer;
     transition: .3s;
 }
 .slide_btn .swiper-button-next{
+    display: inline-block;
+    position: relative;
     top: auto;
+    right: auto;
     width: 48px;
     height: 48px;
-    margin-top: 0;
+    margin: 0 0 0 24px;
+    background-image: url(/naver_cloud/img/main_next_btn_w.png);
     background-size: cover;
-    position: relative;
+    cursor: pointer;
+    transition: .3s;
+}
+.slide_btn .swiper-button-prev:hover{
+    background-image: url(/naver_cloud/img/main_pre_btn.png);
+    background-size: cover;
+}
+.slide_btn .swiper-button-next:hover{
+    background-image: url(/naver_cloud/img/main_next_btn.png);
+    background-size: cover;
+}
+.swiper-pagination-fraction{
     display: inline-block;
-    background: url(/naver_cloud/img/main_next_btn_w.png);
-    right: auto;
-    margin-left: 24px;
+    margin-left: 20px;
+    position: absolute;
+    left: auto;
+    bottom: auto;
+}
+.swiper-pagination span{
+    color: #fff;
+    font-family: 'Calibre-webfont', sans-serif;
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 48px;
+}
+.swiper-pagination-fraction #text{
+    display: none;
+}
+.swiper-pagination span.swiper-pagination-total{
+    padding-left: 24px;
+    position: relative;
+}
+.swiper-pagination span.swiper-pagination-total::before{
+    content: '';
+    width: 16px;
+    height: 1px;
+    background: rgba(255, 255, 255, .3);
+    position: absolute;
+    top: 10px;
+    left: 4px;
+    transform: rotate(-45deg);
 }
 .bottom_btn{
     position: absolute;
@@ -368,8 +400,18 @@
     transition: .3s;
 }
 @keyframes arrowMove {
-    0%, 100% {-moz-transform: translateY(0);-ms-transform: translateY(0);-webkit-transform: translateY(0);transform: translateY(0);}
-    50% {-moz-transform: translateY(8px);-ms-transform: translateY(8px);-webkit-transform: translateY(8px);transform: translateY(8px);}
+    0%, 100% {
+        -moz-transform: translateY(0);
+        -ms-transform: translateY(0);
+        -webkit-transform: translateY(0);
+        transform: translateY(0);
+    }
+    50% {
+        -moz-transform: translateY(8px);
+        -ms-transform: translateY(8px);
+        -webkit-transform: translateY(8px);
+        transform: translateY(8px);
+    }
   }
 .bottom_btn:hover a{
     display: block;
@@ -386,7 +428,7 @@
     width: 100%;
     height: 100%;
 }
-.container{
+.sec2 .container{
     max-width: 1476px;
     height: 100%;
     padding: 142px 90px 152px;
@@ -401,7 +443,6 @@
     color: #1e1e1e;
     font-size: 18px;
     line-height: 20px;
-    letter-spacing: -0.3px;
 }
 .sec_txt h2{
     margin-bottom: 48px;
@@ -437,8 +478,9 @@
 .sec3 .container{
     max-width: 1476px;
     margin: 0 auto;
-    overflow: hidden;
     padding: 0 90px;
+    overflow: hidden;
+    box-sizing: border-box;
 }
 .sec3_left{
     width: 50%;
@@ -446,9 +488,8 @@
     padding: 190px 0;
 }
 .sec3_right{
-    width: 50%;
+    width: 46%;
     float: right;
-    position: relative;
 }
 .sec3_right .scroll_img_wrap{
     width: 100%;
@@ -471,8 +512,8 @@
 }
 .sec3_right ul li{
     position: relative;
-    margin-top: 32px;
     width: 100%;
+    margin-top: 32px;
 }
 .sec3_right ul li img{
     width: 100%;
@@ -480,17 +521,16 @@
 }
 .sec3_right ul li span{
     position: absolute;
-    top: 50%;
-    left: 0;
+    top: 50%; left: 0;
     transform: translate(0, -50%);
     width: 100%;
-    font-size: 24px;
-    line-height: 28px;
     color: #fff;
-    text-align: center;
+    font-size: 24px;
     font-family: 'Calibre-webfont', sans-serif;
     font-weight: 600;
+    line-height: 28px;
     letter-spacing: 0;
+    text-align: center;
 }
 .sec3_right .scroll_img{
     animation: verticalscroll 180s linear infinite;
@@ -510,26 +550,44 @@
     }
 }
 
+
 /* 섹션4 - IT 생태계 바로가기*/
 .sec4{
+    position: relative;
     width: 100%;
     height: 100vh;
-    position: relative;
     overflow: hidden;
 }
 .sec4 .container{
     max-width: 1476px;
+    height: 100vh; /* 다시확인필요 */
     padding: 0 90px;
     margin: 0 auto;
     box-sizing: border-box;
     overflow: hidden;
 }
+.sec4_bg{
+    position: absolute;
+    top: 0; left: 0;
+    height: 100%;
+}
+.sec4_bg .dark{
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.3);
+    text-indent: -10000px;
+}
+.sec4_bg video{
+   min-width: 100%;
+   min-height: 100%;
+}
 .sec4_left{
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
-    width: 40%;
-    margin-right: 50%;
+    width: 50%;
 }
 .sec_txt.white{
     display: block;
@@ -551,48 +609,37 @@
 }
 .sec4_right{
     position: absolute;
-    top: 50%;
-    right: 250px; /* 위치 조정 필요함 */
+    top: 50%; right: 250px;
+    transform: translateY(-50%); 
     width: 360px;
     height: 360px;
-    transform: translateY(-50%);
-    opacity: 1;
+/*     opacity: 0; */
     transition: all 1.5s ease;
 }
 .sec4_right img{
     position: absolute;
-    top: 0;
-    left: 0;
+    top: 0; left: 0;
     width: 100%;
     height: 100%;
-    transform: scale(1.3);
+/*     transform: scale(1.3);
+    opacity: 0; */
+    transform: scale(1);
     z-index: 1;
-
     transition: all 1.5s ease;
+}
+/* .sec4_right.active{
+    opacity: 1;
 }
 .sec4_right.active img{
     transform: scale(1);
-}
-.sec4_bg{
-    position: absolute;
-    top: 0; left: 0;
-    height: 100%;
-}
-.sec4_bg video{
-    width: 100%;
-}
-.sec4_bg .dark{
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    background: rgba(0, 0, 0, .2);
-}
+    opacity: 1;
+} */
+
 
 /* 섹션5 - 새로운 소식 더보기*/
 .sec5{
-    width: 100%;
     position: relative;
+    width: 100%;
 }
 .sec5 .container{
     max-width: 1476px;
@@ -609,7 +656,7 @@
     margin-bottom: 48px;
 }
 .news ul li{
-    width: calc(25% -24px);
+/*     width: calc(25% -24px); */
     margin-right: 32px;
 }
 .news ul li:last-child{
@@ -621,6 +668,24 @@
 .news ul li a:hover .txt_box h4{
     color: #03c75a;
 }
+.news ul li a:hover .img_box .dark_img{
+    opacity: 0.5;
+}
+.img_box{
+    position: relative;
+}
+.img_box .dark_img{
+    display: block;
+    position: absolute;
+    top: 0; left: 1px;
+    width: 100%;
+    height: 100%;
+    border-radius: 24px;
+    background: #1e1e1e;
+    text-indent: -9999px;
+    transition: .3s;
+    opacity: 0;
+}
 .img_box img{
     display: block;
     width: 100%;
@@ -629,94 +694,83 @@
     border: 1px solid #eee;
 }
 .txt_box h4{
-    min-height: 48px;
-    font-size: 18px;
-    line-height: 24px;
     margin: 20px 0;
     color: #1e1e1e;
-    letter-spacing: -0.3px;
-    font-weight: 700;
+    font-size: 18px;
+    line-height: 24px;
     transition: .3s;
     text-align: left;
-    word-break: keep-all;
 }
-
 .txt_box p{
     display: block;
-    font-size: 16px;
-    line-height: 1;
     color: #aaa;
     font-family: 'Calibre-webfont', sans-serif;
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 1;
     letter-spacing: 0;
     text-align: left;
-    font-weight: 500;
 }
-
 .news .btn_bk{
     display: inline-block;
-    line-height: 54px;
     padding: 0 40px;
-    color: #1e1e1e;
-    border-radius: 100px;
-    text-align: center;
-    border: 1px solid #1e1e1e;
-    font-size: 15px;
-    box-sizing: border-box;
-    font-weight: 700;
-    transition: .3s;
     background-color: transparent;
+    border: 1px solid #1e1e1e;
+    border-radius: 100px;
+    box-sizing: border-box;
+    color: #1e1e1e;
+    font-size: 15px;
+    line-height: 54px;
+    transition: .3s;
+    text-align: center;
 }
 .news .btn_bk:hover{
     background: #03c75a;
     border: 1px solid transparent;
     color: #Fff;
 }
-
 .notice{
     display: flex;
     margin-top: 90px;
 }
 .notice_box{
     display: inline-block;
+    position: relative;
     width: calc(50% - 16px);
     margin-right: 32px;
-    border-radius: 24px;
     padding: 28px 28px 32px 36px;
-    position: relative;
     background: #03c75a;
+    border-radius: 24px;
 }
 .notice_box:nth-child(2){
     margin: 0;
     background: #07b4eb;
 }
 .notice_box span{
-    font-size: 16px;
-    line-height: 22px;
-    color: #fff;
     display: block;
     margin-bottom: 18px;
+    color: #fff;
     font-family: 'Calibre-webfont', sans-serif;
+    font-size: 16px;
     font-weight: 600;
+    line-height: 22px;
     letter-spacing: 0;
 }
 .notice_box p{
+    color: #fff;
     font-size: 20px;
     line-height: 30px;
-    color: #fff;
-    letter-spacing: -0.3px;
-    font-weight: bold;
 }
 .notice_box .btn_bk{
-    position: absolute;
-    bottom: 32px;
-    right: 28px;
-    line-height: 46px;
     display: inline-block;
+    position: absolute;
+    bottom: 32px; right: 28px;
     padding: 0 40px;
     background: #1e1e1e;
     border-radius: 100px;
     color: #fff;
     font-size: 15px;
+    line-height: 46px;
     text-align: center;
     transition: .3s;
 }
@@ -768,11 +822,10 @@
 }
 .ft_link a{
     display: block;
+    margin-right: 24px;
     font-size: 14px;
     line-height: 1;
     color: #999;
-    margin-right: 24px;
-    font-weight: bold;
     transition: .3s;
 }
 .ft_link a:nth-child(2){
@@ -784,13 +837,12 @@
 .ft_sns ul li{
     display: inline-block;
     margin-right: 24px;
-    text-align: right;
 }
 .ft_sns ul li a{
+    display: block;
     font-size: 14px;
     line-height: 1;
     color: #ccc;
-    font-weight: bold;
     transition: .3s;
 }
 .ft_link a:hover{
@@ -799,40 +851,36 @@
 .ft_sns ul li a:hover{
     color: #03c75a;
 }
-
 .ft_right{
     flex-shrink: 0;
 }
-.fam_site{}
 .fam_site>a{
+    display: inline-block;
     position: relative;
     height: 40px;
     line-height: 40px;
-    background: #999;
-    display: inline-block;
     padding: 0 42px 0 14px;
-    font-size: 14px;
-    font-weight: 700;
-    color: #fff;
+    background: #999;
     border-radius: 5px;
+    font-size: 14px;
+    color: #fff;
     transition: .3s;
     letter-spacing: -0.3px;
 }
 .fam_site>a>i{
     display: inline-block;
+    position: absolute;
+    top: 13px; right: 14px;
     width: 14px;
     height: 14px;
-    position: absolute;
-    top: 13px;
-    right: 14px;
     background: url(/naver_cloud/img/footer_open.png)no-repeat center;
     background-size: cover;
     transition: .3s;
 }
-.fam_site>a>i.on{
+.fam_site>a>i.active{
     transform: rotate(45deg);
 }
-.fam_site>a.on{
+.fam_site>a.active{
     background: #1e1e1e;
 }
 .fam_site>a:hover{
@@ -852,7 +900,7 @@
     background-color: #fff;
     text-align: left;
 }
-.fam_site ul.on{
+.fam_site ul.active{
     display: block;
 }
 .fam_site ul li{
@@ -871,8 +919,7 @@
     content: '';
     display: block;
     position: absolute;
-    top: 0;
-    right: 10px;
+    top: 0; right: 10px;
     width: 24px;
     height: 24px;
     background: url(/naver_cloud/img/outlink_icon.png) no-repeat center;
@@ -883,6 +930,10 @@
 .fam_site ul li a:hover{
     color: #03c75a;
 }
+.fam_site ul li a:hover::after{
+    opacity: 1;
+}
+
 
 
 /* 태블릿 & 모바일 */
@@ -976,7 +1027,7 @@
         height: 80vh;
     }
     .swiper-slide video{
-/*         display: none; */
+        display: none;
     }
     .swiper-slide .slide_txt{
         padding: 0 24px;
@@ -1020,4 +1071,4 @@
         width: 100%;
         border-bottom: 1px solid #eee;
     }
-}
+    }
