@@ -142,7 +142,7 @@
 .toggle_menu{
     display: none;
     position: absolute;
-    right: 0; top: 0;
+    right: 0; top: -6px;
     width: 32px;
     height: 32px;
     z-index: 15;
@@ -161,7 +161,7 @@
 .toggle_menu span:nth-child(3){
     top: 22px;
 }
-.top_btn a{
+#top_btn{
     display: none;
     position: fixed;
     right: 50px; bottom: 50px;
@@ -175,49 +175,48 @@
     z-index: 20;
     transition: .3s;
 }
-.top_btn:hover a{
+#top_btn:hover{
     background: url(/naver_cloud/img/top_btn_hover.png) no-repeat center;
     background-size: cover;
 }
 /* 스크롤 시 변화 */
-.scroll .hd_wrap{
+#hd.scroll .hd_wrap{
     background-color: #fff;
-    z-index: 30;
+    z-index: 100;
 }
-.scroll .hd_logo a{
+#hd.scroll .hd_logo a{
     background: url(/naver_cloud/img/main_logo.svg) no-repeat;
     background-size: contain; 
 }
-.scroll #gnb>ul>li>a{
+#hd.scroll #gnb>ul>li>a{
     color: #aaa;
 }
-.scroll #gnb>ul li a:hover{
+#hd.scroll #gnb>ul li a:hover{
     color: #03c75a;
 }
-.scroll #gnb ul li.active a{
+#hd.scroll #gnb ul li.active a{
     color: #03c75a;
 }
-.scroll .lang_menu .lang_btn{
+#hd.scroll .lang_menu .lang_btn{
     background: url(/naver_cloud/img/global_icon_b.png) no-repeat;
     background-size: contain; 
 }
-.scroll .lang_menu .lang_btn:hover{
+#hd.scroll .lang_menu .lang_btn:hover{
     background: url(/naver_cloud/img/global_icon_g.png) no-repeat;
     background-size: contain;
 }
-.scroll .toggle_menu span{
+#hd.scroll .toggle_menu span{
     background: #1e1e1e;
 }
-.scroll .top_btn a{
+#hd.scroll #top_btn{
     display: block;
-    transform: translateX(0);
 }
 
 
 /* 섹션1 - 메인배너 */
 .sec1{
     width: 100%; 
-    height: 100%;
+    height: 100vh;
 }
 .swiper-container{
     width: 100%; 
@@ -225,11 +224,11 @@
     position: relative;
 }
 .swiper-slide.slide2{
-    background: url(/naver_cloud/img/slide_img01.jpg) no-repeat center;
+    background: url(/naver_cloud/img/slide_img01.jpg) no-repeat center center;
     background-size: cover;
 }
 .swiper-slide.slide3{
-    background: url(/naver_cloud/img/slide_img02.jpg) no-repeat center;
+    background: url(/naver_cloud/img/slide_img02.jpg) no-repeat center center;
     background-size: cover;
 }
 .swiper-slide .slide_img .dark{
@@ -333,7 +332,7 @@
     right: auto;
     width: 48px;
     height: 48px;
-    margin: 0 0 0 24px;
+    margin: 0 0 0 20px;
     background-image: url(/naver_cloud/img/main_next_btn_w.png);
     background-size: cover;
     cursor: pointer;
@@ -361,9 +360,6 @@
     font-weight: 500;
     line-height: 48px;
 }
-.swiper-pagination-fraction #text{
-    display: none;
-}
 .swiper-pagination span.swiper-pagination-total{
     padding-left: 24px;
     position: relative;
@@ -377,6 +373,9 @@
     top: 10px;
     left: 4px;
     transform: rotate(-45deg);
+}
+#text{
+    display: none;
 }
 .bottom_btn{
     position: absolute;
@@ -437,6 +436,7 @@
 }
 .sec_txt.center{
     text-align: center;
+    opacity: 0;
 }
 .sec_txt p{
     margin-bottom: 36px;
@@ -486,14 +486,17 @@
     width: 50%;
     float: left;
     padding: 190px 0;
+    opacity: 0;
 }
 .sec3_right{
     width: 46%;
     float: right;
+    opacity: 0;
 }
 .sec3_right .scroll_img_wrap{
     width: 100%;
     position: relative;
+
 }
 .sec3_right ul{
     display: inline-block;
@@ -613,27 +616,24 @@
     transform: translateY(-50%); 
     width: 360px;
     height: 360px;
-/*     opacity: 0; */
     transition: all 1.5s ease;
+    opacity: 0;
 }
 .sec4_right img{
     position: absolute;
     top: 0; left: 0;
     width: 100%;
     height: 100%;
-/*     transform: scale(1.3);
-    opacity: 0; */
-    transform: scale(1);
+    transform: scale(1.3);
     z-index: 1;
-    transition: all 1.5s ease;
+    transition: all 1.5s ease; 
 }
-/* .sec4_right.active{
+#section4.active .sec4_right{
     opacity: 1;
 }
-.sec4_right.active img{
+#section4.active .sec4_right img{
     transform: scale(1);
-    opacity: 1;
-} */
+}
 
 
 /* 섹션5 - 새로운 소식 더보기*/
@@ -648,8 +648,12 @@
     margin: 0 auto;
     box-sizing: border-box;
 }
+.sec5 .sec_txt{
+    opacity: 0;
+}
 .news{
     text-align: center;
+    opacity: 0;
 }
 .news ul{
     display: flex;
@@ -732,6 +736,7 @@
 .notice{
     display: flex;
     margin-top: 90px;
+    opacity: 0;
 }
 .notice_box{
     display: inline-block;
@@ -880,10 +885,10 @@
 .fam_site>a>i.active{
     transform: rotate(45deg);
 }
-.fam_site>a.active{
+.fam_site>a:hover{
     background: #1e1e1e;
 }
-.fam_site>a:hover{
+.fam_site>a.active{
     background: #1e1e1e;
 }
 .fam_site{
@@ -934,6 +939,57 @@
     opacity: 1;
 }
 
+
+/* 타이틀 애니메이션 */
+#section2.effect .sec_txt{
+    -webkit-animation: 1.2s movetop ease-out forwards;
+    animation: 1.2s movetop ease-out forwards;
+    animation-delay: .5s;
+}
+#section3.effect .sec3_left{
+    -webkit-animation: 1.2s movetop ease-out forwards;
+    animation: 1.2s movetop ease-out forwards;
+    animation-delay: .3s;
+}
+#section3.effect .sec3_right{
+    -webkit-animation: 1.2s moveshow ease-out forwards;
+    animation: 1.2s moveshow ease-out forwards;
+    animation-delay: .5s;
+}
+#section5.effect .sec_txt{
+    -webkit-animation: 1.2s movetop ease-out forwards;
+    animation: 1.2s movetop ease-out forwards;
+    animation-delay: .5s;
+}
+#section5.effect .news{
+    -webkit-animation: 1.2s movetop ease-out forwards;
+    animation: 1.2s movetop ease-out forwards;
+    animation-delay: .8s;
+}
+#section5.effect .notice{
+    -webkit-animation: 1.2s movetop ease-out forwards;
+    animation: 1.2s movetop ease-out forwards;
+    animation-delay: 1.2s;
+}
+@keyframes movetop {
+    0% {
+        opacity: 0;
+        -moz-transform: translateY(40px);
+        -ms-transform: translateY(40px);
+        -webkit-transform: translateY(40px);
+        transform: translateY(40px);
+    }
+    100% {
+        opacity: 1;
+        -moz-transform: translateY(0);
+        -ms-transform: translateY(0);
+        -webkit-transform: translateY(0);
+        transform: translateY(0)}
+}
+@keyframes moveshow {
+    0% {opacity: 0;}
+    100% {opacity: 1;}
+}
 
 
 /* 태블릿 & 모바일 */
@@ -990,7 +1046,15 @@
         background: url(/naver_cloud/img/mo_link_def.png)no-repeat center;
         background-size: cover;
     }
-
+    .sec4_right{
+        right: 30px;
+    }
+    .notice_box .btn_bk{
+        margin-top: 15px;
+        position: relative;
+        bottom: auto;
+        right: auto;
+    }
 }   
 @media all and (max-width: 1024px){
     #hd .hd_wrap{
@@ -1010,12 +1074,30 @@
         margin-bottom: 24px !important;
         line-height: 1.3;
     }
+    .sec3 .container{
+        padding: 0 30px;;
+    }
+    .sec4_left{
+        left: 30px;
+    }
+    .sec4_right{
+        right: 30px;
+    }
     .sec5 .container{
         padding: 120px 30px 80px;
+    }
+    .news ul{
+        flex-wrap: wrap;
     }
     .news ul li{
         margin-bottom: 46px;
         width: calc(50% - 16px);
+    }
+    .news ul li:nth-child(2n){
+        margin: 0;
+    }
+    .ft_wrap{
+        padding: 50px 30px;
     }
 }
 @media all and (max-width: 767px){
@@ -1024,13 +1106,11 @@
     }
     .swiper-container{
         width: 100%;
-        height: 80vh;
-    }
-    .swiper-slide video{
-        display: none;
+        height: 100vh;
     }
     .swiper-slide .slide_txt{
         padding: 0 24px;
+        max-width: none;
     }
     .slide_txt h2{
         font-size: 32px;
@@ -1039,6 +1119,12 @@
         margin-top: 24px;
         width: 246px;
         height: 42px;
+    }
+    .slide_btn{
+        padding: 0 24px;
+        width: 100%;
+        height: auto;
+        bottom: 24px;
     }
     .sec2 .container{
         padding: 48px 24px 36px !important;
@@ -1057,7 +1143,16 @@
     .sec_txt a::after{
         top: 14px;
     }
-
+    .notice{
+        flex-direction: column;
+        align-items: center
+    }
+    .notice_box{
+        margin-right: 0;
+        margin-bottom: 16px;
+        width: 100%;
+        border-radius: 12px;
+    }
     .sec5 .container{
         padding: 48px 24px 60px;
     }
@@ -1066,9 +1161,10 @@
     }
     .news ul li{
         margin-left: 0;
+        margin-right: 0;
         margin-bottom: 0;
         padding: 16px 0;
         width: 100%;
         border-bottom: 1px solid #eee;
     }
-    }
+}

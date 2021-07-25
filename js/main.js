@@ -1,34 +1,10 @@
-// 헤더고정 & 탑버튼
-$('a.page-scroll').bind('click', function(event) {
-    var $anchor = $(this);
-    $anchor.parent().addClass('on').siblings().removeClass('on'); 
-
-    $('html, body').stop().animate({
-        scrollTop: ($($anchor.attr('href')).offset().top - 50)
-    }, 1250, 'easeInOutExpo');
-    event.preventDefault();
-});
-
-$(window).scroll(function(){
-    var scrollTopPos = $(window).scrollTop();
-        if(scrollTopPos > 0){ 
-        $("body").addClass('scroll');
-    }
-        else{ 
-        $("body").removeClass('scroll');
-    }
-});
-
-
 //  gnb 클릭 시 밑줄 효과
-$(document).ready(function(){
-    $('#gnb>ul>li').on('click', function(){
-        var gnb = $(this).index()
-        $('#gnb>ul>li').removeClass('active');
-        $('#gnb>ul>li').eq(gnb).addClass('active');
-        $('#gnb>ul>li.outlink').removeClass('active')
-    });
-})
+$('#gnb>ul>li').on('click', function(){
+    var gnb = $(this).index()
+    $('#gnb>ul>li').removeClass('active');
+    $('#gnb>ul>li').eq(gnb).addClass('active');
+    $('#gnb>ul>li.outlink').removeClass('active')
+});
 
 // lang_btn 클릭 시 lang_list 보이게
 $(document).ready(function(){
@@ -49,9 +25,47 @@ $(document).ready(function(){
 // 패밀리사이트
 $(document).ready(function(){
     $('.fam_site>a').on('click', function(){
-        $('.fam_site>ul').toggleClass('active');
+        $('.fam_site>ul').slideToggle('fast');
         $('.fam_site>a').toggleClass('active');
         $('.fam_site>a>i').toggleClass('active');
     });
 })
 
+
+// 애니메이션
+$(window).load(function(){
+    var controller = new ScrollMagic.Controller();
+    // 나무 아이콘
+    var scene4 = new ScrollMagic.Scene({
+        triggerElement: "#section4",
+        triggerHook: 0.5,
+        reverse: false,
+    })
+        .setClassToggle("#section4", "active")
+        .addTo(controller)
+
+    // 타이틀 애니메이션
+    var scene2 = new ScrollMagic.Scene({
+        triggerElement: "#section2", 
+        triggerHook: 0.8,
+        reverse: true,
+    })
+    .setClassToggle("#section2",  "effect")
+    .addTo(controller)
+
+    var scene3 = new ScrollMagic.Scene({
+        triggerElement: "#section3", 
+        triggerHook: 0.8,
+        reverse: true,
+    })
+    .setClassToggle("#section3",  "effect")
+    .addTo(controller)
+
+    var scene5 = new ScrollMagic.Scene({
+        triggerElement: "#section5",
+        triggerHook: 0.8,
+        reverse: true,
+    })
+        .setClassToggle("#section5", "effect")
+        .addTo(controller)
+});
