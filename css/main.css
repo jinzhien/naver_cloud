@@ -790,7 +790,7 @@
 .ft_left{
     flex-grow: 1;
 }
-.ft_left h1 a{
+.ft_logo a{
     display:block; 
     width: 164px;
     height: 100%; 
